@@ -1,9 +1,11 @@
+package lab3;
 /**
   Lamia Islam && Kaitlyn Cao
   Period 6 and 7
   Description: Creating various array methods and sorting methods
  */
 import java.lang.Math;
+import lab3.Utilities;
 public class Runner {
 
 
@@ -14,7 +16,7 @@ public class Runner {
 		String[] list2 = {"B", "D", "F", "H", "J", "L", "N", "P", "R", "T", "V", "X", "Z"};
 		
 		String[] list3 = merge(list1,list2);
-		printArr(list3);
+		Utilities.printArr(list3);
 		
 		String[] mslist1 = {"M", "S", "K"};
 		String[] mslist2 = {"C", "L", "I"};
@@ -64,15 +66,6 @@ public class Runner {
 			}
 		}
 		return result; 
-	}
-	
-	
-	public static void printArr(String[] arr)
-	{
-		for(int i = 0; i<arr.length; i++)
-		{
-			System.out.print(arr[i]);
-		}
 	}
 	
 	public static String[] mergeSort(String[] list)
