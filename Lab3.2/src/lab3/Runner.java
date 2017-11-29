@@ -21,8 +21,8 @@ public class Runner {
 		//String[] list3 = merge(list1,list2);
 		//Utilities.printArr(list3);
 		
-		String[] mslist1 = {"M", "S", "K","A","Z","Y","L"};
-		String[] mslist2 = {"C", "L", "I"};
+		//String[] mslist1 = {"M", "S", "K","A","Z","Y","L"};
+		//String[] mslist2 = {"C", "L", "I"};
 		//Utilities.printArr(mergeSort(mslist1));
 	}
 	
@@ -111,30 +111,24 @@ public class Runner {
 	}
 	public static int partition(int[] list)
 	{
-		int pivot = list[0], front = 0,back = list.length-1;
-		while(front<back)
+		int pivot = list[0];
+		int pivotPos = 0;
+		int front = 0;
+		int last = front;
+		while(front<list.length)
 		{
-			for(int i = front;i<list.length;i++)
+			while(list[front]<=pivot && front<list.length)
 			{
-				if(list[i]<list[pivot])
-				{
-					swap(list,i,pivot);
-					
-					for(int j = back;j<1;j--)
-					{
-						if(list[j]<list[pivot])
-						{
-							swap(list,j,pivot);
-							
-						}
-						back--;
-					}
-					
-				}
 				front++;
-				
 			}
+			while(list[last]>pivot && last<list.length)
+			{
+				last++;
+			}
+			swap(list,front,last);
+			pivotPos = front;
 		}
-		return pivot;
+		swap(list,pivotPos,0);
+		return pivotPos;
 	}
 } 
