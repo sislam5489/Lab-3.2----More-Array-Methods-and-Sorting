@@ -117,11 +117,12 @@ public class Runner {
 		int last = front;
 		while(front<list.length)
 		{
-			while(list[front]<=pivot && front<list.length)
+			System.out.println(front);
+			while(list[front]<=pivot && front<list.length-1)
 			{
 				front++;
 			}
-			while(list[last]>pivot && last<list.length)
+			while(list[last]>pivot && last<list.length-1)
 			{
 				last++;
 			}
