@@ -14,12 +14,14 @@ public class Runner {
 	public static void main (String[]args)
 	{
 		
-		String[] list1 = {"A", "C", "D", "G", "I", "K", "M", "O", "Q", "S", "U", "W", "Y"};
+		//String[] list1 = {"A", "C", "D", "G", "I", "K", "M", "O", "Q", "S", "U", "W", "Y"};
 		String[] list2 = {"B", "E", "F", "H", "J", "L","N","P","R","T","V","X","Z"};
 		int[]list = {5,1,6,4,3,2,9,0};
-		System.out.print(partition(list));
+		int[] list1 = {4,9,2,1,0,5};
+		System.out.println(partition(list1));
+		
 		//String[] list3 = merge(list1,list2);
-		//Utilities.printArr(list3);
+		Utilities.printArr(list1);
 		
 		//String[] mslist1 = {"M", "S", "K","A","Z","Y","L"};
 		//String[] mslist2 = {"C", "L", "I"};
@@ -114,21 +116,30 @@ public class Runner {
 		int pivot = list[0];
 		int pivotPos = 0;
 		int front = 0;
-		int last = front;
-		while(front<list.length)
+		int last = 0;
+		while(last<list.length)
 		{
-			System.out.println(front);
-			while(list[front]<=pivot && front<list.length-1)
-			{
-				front++;
-			}
-			while(list[last]>pivot && last<list.length-1)
-			{
-				last++;
-			}
-			swap(list,front,last);
-			pivotPos = front;
+			
+				while(list[front]<=pivot && front<list.length-1)
+				{
+					front++;
+				}
+				last = front;
+				//System.out.println(front);
+				//System.out.println(last);
+				while((last<list.length) && list[last]>pivot)
+				{
+					last++;
+				}
+				
+				if(last<list.length)
+				{	
+					swap(list,front,last);
+					pivotPos = front;
+				}
 		}
+			
+		
 		swap(list,pivotPos,0);
 		return pivotPos;
 	}
