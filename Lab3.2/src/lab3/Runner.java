@@ -115,7 +115,7 @@ public class Runner {
 	{
 		int pivot = list[0];
 		int pivotPos = 0;
-		int front = 0;
+		int front = 0; 
 		int last = 0;
 		while(last<list.length)
 		{
